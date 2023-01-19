@@ -36,6 +36,7 @@ router.post('/',(req,res) =>{
 
     }
     users.push(newUser)
+    saveUsers()
     res.json(users)
 
 })
