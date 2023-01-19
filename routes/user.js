@@ -3,7 +3,7 @@ const express = require('express')
 const router = express.Router()
 
 const uuid = require('uuid')
-const users = require('../users')
+const {users,saveUsers} = require('../users')
 
 router.get('/',(req,res)=>{
     res.json(users);
@@ -13,9 +13,9 @@ router.get('/',(req,res)=>{
 
 router.get('/:id', (req, res) =>{
     const userId = parseInt ( req.params.id) ;
-    const isfound = users.some (user => user. id === userId);
+    const isfound = users.find(user => user.id === userId);
     if(isfound) {
-    res.json(users.filter (user => user.id === userId));
+    res.json(users.find (user => user.id === userId));
     }
     else {
     res.status (480).json({msg: `no user with the of ${req.params.id}`})
