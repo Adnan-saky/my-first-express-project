@@ -24,6 +24,7 @@ router.get('/:id', (req, res) => {
     }
 })
 
+
 //* Create user
 router.post('/', (req, res) => {
     //res.send(req.body);
@@ -43,6 +44,7 @@ router.post('/', (req, res) => {
 
 })
 
+
 //* update user
 router.put('/:id', (req, res) => {
     const found = users.some(user => user.id === parseInt(req.params.id));
@@ -61,6 +63,7 @@ router.put('/:id', (req, res) => {
         res.status(400).json({ msg: `no user with this id of ${req.params.id} foumd` })
     }
 })
+
 
 //* delete user
 router.delete('/:id', (req, res) =>{
