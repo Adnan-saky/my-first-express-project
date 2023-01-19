@@ -1,5 +1,5 @@
 const fs = require('fs');
-const users = require('/');
+const users = require('./users.json');
 
 /*const users = [
     {id:1, name:'adnan', email:'adnan@gmail.com'},
